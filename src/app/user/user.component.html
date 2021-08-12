@@ -1,0 +1,81 @@
+<p>
+  <mat-toolbar color="accent">
+    <span>Student Records id:180031244 vishal</span>
+    <span class="example-spacer"></span>
+    <button mat-raised-button class="records-button" color="primary" (click)="goRecordsPage()">RECORDS</button>
+  </mat-toolbar>
+</p>
+<section class="register-form">
+  <form
+  fxLayout="column"
+  fxLayoutAlign="center center"
+  fxLayoutGap = "15px"
+  (ngSubmit)="onSubmit(form.value)"
+  [formGroup]="form"
+  #f="ngForm"
+  >
+    <mat-form-field>
+    <input
+    type="text"
+    matInput
+    placeholder="Name"
+    name="name"
+    required
+    formControlName="name">
+  </mat-form-field>
+  <mat-form-field>
+    <input
+    type="number"
+    matInput
+    placeholder="ID"
+    name="id"
+    required
+    formControlName="id">
+  </mat-form-field>
+  <mat-form-field>
+    <input
+    type="number"
+    matInput
+    placeholder="Telephone No."
+    name="phonenumber"
+    required
+    formControlName="number">
+  </mat-form-field>
+  <mat-form-field>
+    <input
+    type="email"
+    matInput
+    placeholder="Email"
+    name="email"
+    required
+    formControlName="email">
+  </mat-form-field>
+
+  <mat-form-field>
+    <input
+    type="text"
+    matInput
+    placeholder="Gender"
+    name="gender"
+    required
+    formControlName="gender">
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+      <mat-label>Dob</mat-label>
+      <input
+       matInput
+        [matDatepicker]="dp3"
+        formControlName="Dob">
+      <mat-datepicker-toggle matSuffix [for]="dp3"></mat-datepicker-toggle>
+      <mat-datepicker #dp3 disabled="false"></mat-datepicker>
+    </mat-form-field>
+  <button
+  type="submit"
+  mat-raised-button
+  color="primary"
+  [disabled]="f.invalid"
+  >Add Record</button>
+  </form>
+</section>
+

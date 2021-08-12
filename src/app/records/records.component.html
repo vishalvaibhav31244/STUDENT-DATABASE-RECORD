@@ -1,0 +1,24 @@
+<p>
+  <mat-toolbar color="primary">
+    <span>Student Records</span>
+  </mat-toolbar>
+</p>
+<div *ngFor="let ref of localData">
+  <mat-card class="example-card">
+    <mat-card-content>
+      <p>
+        Name={{ref.name}},
+        <br>
+        ID={{ref.id}},
+         <br>
+        Email={{ref.email}},
+        <br>
+        Phone Number={{ref.number}},
+        <br>
+        Gender={{ref.gender}},
+        <br>
+        Date of birth={{ref.Dob}}
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>
